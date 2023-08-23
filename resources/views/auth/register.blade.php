@@ -39,6 +39,15 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        <!-- Register as Admin? -->
+        <div class="mt-4">
+            <x-input-label for="checkbox"/>
+            <label class="flex items-center space-x-2">
+                <input type="checkbox" id="checkbox" name="checkbox" class="checkbox">
+                <span><strong>&nbsp;Register as Admin?</strong></span>
+            </label>
+        </div>
+        
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}

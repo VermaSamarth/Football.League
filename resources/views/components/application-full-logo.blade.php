@@ -1,0 +1,1 @@
+<img src="{{ asset('images/logo_nobg.png') }}" alt="Logo" class="logo" width="250">
