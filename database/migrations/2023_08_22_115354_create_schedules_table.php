@@ -17,10 +17,12 @@ return new class extends Migration
             $table->integer('away_id');
             $table->date('match_date');
             $table->string('venue');
-            $table->integer('home_goals');
-            $table->integer('away_goals');
+            $table->integer('home_goals')->nullable();
+            $table->integer('away_goals')->nullable();
             $table->string('referee1');
             $table->string('referee2');
+            $table->integer('status')->default(0);
+            $table->integer('winner_id')->nullable();
             $table->timestamps();
         });
     }

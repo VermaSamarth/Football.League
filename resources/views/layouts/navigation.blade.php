@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white-300 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -10,12 +10,110 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
+                
+                @if (Auth::user()->is_admin==0)
+                    <!-- Navigation Links - User -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            <strong>{{ __('Dashboard') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('teams')" :active="request()->routeIs('teams')">
+                            <strong>{{ __('Teams') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('fixtures')" :active="request()->routeIs('fixtures')">
+                            <strong>{{ __('Fixtures') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('table')" :active="request()->routeIs('table')">
+                            <strong>{{ __('Points Table') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('players')" :active="request()->routeIs('players')">
+                            <strong>{{ __('Players') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('news')" :active="request()->routeIs('news')">
+                            <strong>{{ __('News') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                            <strong>{{ __('About') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('more')" :active="request()->routeIs('more')">
+                            <strong>{{ __('More') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                @else
+                    <!-- Navigation Links - Admin -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            <strong>{{ __('Dashboard') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('teams')" :active="request()->routeIs('teams')">
+                            <strong>{{ __('Teams') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('fixtures')" :active="request()->routeIs('fixtures')">
+                            <strong>{{ __('Fixtures') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('table')" :active="request()->routeIs('table')">
+                            <strong>{{ __('Points Table') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('players')" :active="request()->routeIs('players')">
+                            <strong>{{ __('Players') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('news')" :active="request()->routeIs('news')">
+                            <strong>{{ __('News') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                            <strong>{{ __('About') }}</strong>
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('more')" :active="request()->routeIs('more')">
+                            <strong>{{ __('More') }}</strong>
+                        </x-nav-link>
+                    </div>
+                @endif
+
+                
+                
             </div>
 
             <!-- Settings Dropdown -->

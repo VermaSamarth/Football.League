@@ -23,7 +23,7 @@ class Team extends Model
     }
 
     public function stands(){
-        return $this->hasOne(Standing::class);
+        return $this->belongsTo(Standing::class);
     }
 
     public function plays_at(){

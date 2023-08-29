@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('logo');
-            $table->date('year');
+            $table->year('year');
             $table->string('stadium_name');
+            $table->integer('division');
             $table->timestamps();
         });
     }

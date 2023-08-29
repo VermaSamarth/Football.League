@@ -9,6 +9,8 @@ class Player extends Model
 {
     use HasFactory;
 
+    
+
     public function was_subbed_in(){
         return $this->hasOne(Substitution::class);
     }
