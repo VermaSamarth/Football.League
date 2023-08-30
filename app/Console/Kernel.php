@@ -15,6 +15,10 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
     }
 
+    protected $commands=[
+        commands\GetDBName::class
+    ];
+
     /**
      * Register the commands for the application.
      */

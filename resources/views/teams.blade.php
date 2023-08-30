@@ -40,7 +40,7 @@
                             @if ($team->division==1)
                             @php $count++; @endphp
                                 <tr>
-                                    <td class="border border-gray-400 px-4 py-2"><strong>{{$loop->index+1}}</strong></td>
+                                    <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" ><img src="other_images/{{$team->logo}}" alt=""></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->location}}</strong></td>
@@ -75,10 +75,12 @@
                         </tr>
                     </thead>
                     <tbody style="text-align: center;">
+                        @php $count=0; @endphp
                         @foreach ($teams as $team)
                             @if ($team->division==2)
+                            @php $count++; @endphp
                                 <tr>
-                                    <td class="border border-gray-400 px-4 py-2"><strong>{{$loop->index+1-$count}}</strong></td>
+                                    <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" ><img src="other_images/{{$team->logo}}" alt=""></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->location}}</strong></td>
@@ -96,6 +98,8 @@
                     <a href="{{route('admin_add_team')}}"><img src={{ asset('images/addteam.png') }} alt="" width="200" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-right: 20px;"></a>
                     {{-- <a href="{{route('admin_add_team')}}"><img src={{ asset('images/file_upload.png') }} alt="" width="203" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-left: 20px;"></a> --}}
                 </div>
+                @else
+                    <div><br><br><br></div>
                 @endif
             </div>
         </div>
