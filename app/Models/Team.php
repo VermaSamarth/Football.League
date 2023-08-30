@@ -14,10 +14,6 @@ class Team extends Model
         return $this->hasOne(Manager::class);
     }
 
-    public function playes(){
-        return $this->hasMany(Player::class);
-    }
-
     public function scheduled(){
         return $this->hasMany(Schedule::class);
     }

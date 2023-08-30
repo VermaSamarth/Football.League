@@ -70,9 +70,7 @@ Route::middleware(['auth','verified',EnsureIsAdmin::class])->group(function(){
     Route::get('admin/teamlist', [TeamController::class, 'teamlist']);
 
     // Fixtures
-    Route::get('/admin/schedule/add',function(){
-        return view('add_fixtures');
-    })->name('add_fixtures');
+    Route::get('/admin/schedule/add',[ScheduleController::class,'add_fixture'])->name('add_fixtures');
 
     Route::post('/admin/schedule/add/new',[ScheduleController::class,'add_schedule'])->name('add_new_schedule');
 

@@ -39,7 +39,7 @@
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$player->position}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$player->dob}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$player->nationality}}</strong></td>
-                                <td class="border border-gray-400 px-4 py-2"><strong>{{$player->team_id}}</strong></td>
+                                <td class="border border-gray-400 px-4 py-2"><strong>{{$player->is_player_of->name}}</strong></td>
                             </tr>
                             @endforeach
                         </tbody>

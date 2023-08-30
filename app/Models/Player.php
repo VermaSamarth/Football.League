@@ -9,7 +9,9 @@ class Player extends Model
 {
     use HasFactory;
 
-    
+    public function is_player_of(){
+        return $this->hasOne(Team::class,'id','team_id');
+    }
 
     public function was_subbed_in(){
         return $this->hasOne(Substitution::class);

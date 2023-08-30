@@ -24,11 +24,6 @@ class PlayerController extends Controller
        return redirect()->to('/admin/player-list');
     } 
 
-    function plaueList() {
-        $player=Player::all();
-        return view('players',['players'=>$player]);
-    }
-
     public function display_players(){
         $player=Player::all();
         return view('players',['players'=>$player]);
@@ -36,7 +31,8 @@ class PlayerController extends Controller
 
     public function import(Request $request) 
     {
-        dd("Upload player file");
+        // dd("Upload player file");
+        
         Excel::import(new PlayersImport,$request->file('file'));
         
         return redirect('/')->with('success', 'All good!');

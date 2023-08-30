@@ -33,13 +33,22 @@
                             </thead>
                             <tbody style="text-align: left;border border-white-400 px-4 py-2">
                                 <tr>
-                                    <td class="px-4 py-2"><label for="home_id" style="color: white"><strong>Home Team ID:</strong></label></td>
-                                    <td class=" px-4 py-2"><input type="number" id="home_id" name="home_id" placeholder="Enter the team name" required><br><br></td>
+                                    <td class="px-4 py-2"><label for="home_id" style="color: white" ><strong>Home Team ID:</strong></label></td>
+                                    <td style="padding-bottom:10px; padding-top:10px; padding-right:5px">
+                                        <select name="home_id" id="home_id" placeholder="Enter the team name" required style="margin-left: 13px;">
+                                        @foreach ($teams as $team)
+                                            <option value="{{$team->id}}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select></td>
                                 </tr>
                                 
                                 <tr>
                                     <td class=" px-4 py-2"><label for="away_id" style="color: white"><strong>Away Team ID:</strong></label></label></td>
-                                    <td class=" px-4 py-2"><input type="number" id="away_id" name="away_id" placeholder="Enter the team name" required><br><br></td>
+                                    <td><select name="away_id" id="away_id" placeholder="Enter the team name" required style="margin-left: 13px;">
+                                        @foreach ($teams as $team)
+                                            <option value="{{$team->id}}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select></td>
                                 </tr>
                                 
                                 <tr>

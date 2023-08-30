@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Imports\SchedulesImport;
@@ -28,6 +29,10 @@ class ScheduleController extends Controller
 
     public function update_schedule($id){
         return view('update_schedule',['schedule'=>Schedule::find($id)]);
+    }
+
+    public function add_fixture(){
+        return view('add_fixtures',['teams'=>Team::all()]);
     }
 
     public function store_updated_schedule(Request $request){
