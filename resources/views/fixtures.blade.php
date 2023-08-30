@@ -47,9 +47,9 @@
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{$schedule->referee1}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{"-"}}</strong></td>
                                     @if($currentDate >= $schedule->match_date)
-                                        <td class="border border-gray-400 px-4 py-2"><a href="/admin/schedule/update/{{$schedule->id}}"><strong>{{"+"}}</strong></a></td>
+                                        <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(14, 220, 14)"><a href="/admin/schedule/update/{{$schedule->id}}"><strong>{{"+"}}</strong></a></td>
                                     @else
-                                        <td class="border border-gray-400 px-4 py-2"><strong>{{"+"}}</strong></td>
+                                        <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(241, 103, 103)"><strong>{{"+"}}</strong></td>
                                     @endif
                                 </tr> 
                                 @endif
@@ -105,12 +105,14 @@
                     </table>
 
                     @if (Auth::user()->is_admin)
-                    <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                        <a href="{{route('add_fixtures')}}"><img src={{ asset('images/addfixture.png') }} alt="" width="200" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-right: 20px;
-                        "></a>
-                        <a href="{{route('excel_schedule')}}"><img src={{ asset('images/file_upload.png') }} alt="" width="203" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-left: 20px;
-                        "></a>
-                    </div>
+                        <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                            <a href="{{route('add_fixtures')}}"><img src={{ asset('images/addfixture.png') }} alt="" width="200" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-right: 20px;
+                            "></a>
+                            <a href="{{route('excel_schedule')}}"><img src={{ asset('images/file_upload.png') }} alt="" width="203" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-left: 20px;
+                            "></a>
+                        </div>
+                    @else
+                        <div><br><br></div>
                     @endif
                 </div>
         </div>

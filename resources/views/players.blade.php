@@ -49,6 +49,8 @@
                             <a href="{{route('admin_add_player')}}"><img src={{ asset('images/addplayer.png') }} alt="" width="200" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-right: 20px;"></a>
                             <a href="{{route('excel_players')}}"><img src={{ asset('images/file_upload.png') }} alt="" width="203" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg" style="padding-left: 20px;"></a>
                         </div>
+                    @else   
+                        <div><br><br></div>
                     @endif   
                 </div>
             </div>

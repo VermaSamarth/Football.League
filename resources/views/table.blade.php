@@ -37,9 +37,12 @@
                         </tr>
                     </thead>
                     <tbody style="text-align: center;">
+                        @php $count=0; @endphp
                         @foreach ($points as $point)
-                        <tr>
-                                <td class="border border-gray-400 px-4 py-2"><strong>{{$loop->index+1}}</strong></td>
+                        @if ($point->details->division == 1)  
+                            @php $count++; @endphp  
+                            <tr>
+                                <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$point->details->name}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->matches_played}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->wins}}</strong></td>
@@ -50,6 +53,7 @@
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->goals_scored - $point->goals_conceded}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->points}}</strong></td>
                             </tr>
+                        @endif
                             @endforeach
                     </tbody>
                 </table>
@@ -76,9 +80,12 @@
                         </tr>
                     </thead>
                     <tbody style="text-align: center;">
+                        @php $count=0; @endphp
                         @foreach ($points as $point)
-                        <tr>
-                                <td class="border border-gray-400 px-4 py-2"><strong>{{$loop->index+1}}</strong></td>
+                        @if ($point->details->division == 2)  
+                            @php $count++; @endphp
+                            <tr>
+                                <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$point->details->name}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->matches_played}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->wins}}</strong></td>
@@ -89,9 +96,11 @@
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->goals_scored - $point->goals_conceded}}</strong></td>
                                 <td class="border border-gray-400 px-4 py-2"><strong>{{$point->points}}</strong></td>
                             </tr>
+                            @endif
                             @endforeach
                     </tbody>
                 </table>
+                <div><br><br></div>
             </div>
         </div>
     </div>

@@ -81,9 +81,13 @@
                     </tbody>
                 </table>
             </div>
+            @if (Auth::user()->is_admin)
             <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                 <a href="{{route('add_stadium')}}"><img src={{ asset('images/add_stadium.png') }} alt="" width="220" class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg"></a>
             </div>
+            @else
+                <div><br><br></div>
+            @endif
         </div>
     </div>
     
