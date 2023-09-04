@@ -33,7 +33,7 @@
                             </thead>
                             <tbody style="text-align: left;border border-white-400 px-4 py-2">
                                 <tr>
-                                    <td class="px-4 py-2"><label for="home_id" style="color: white" ><strong>Home Team ID:</strong></label></td>
+                                    <td class="px-4 py-2"><label for="home_id" style="color: white" ><strong>Home Team:</strong></label></td>
                                     <td style="padding-bottom:10px; padding-top:10px; padding-right:5px">
                                         <select name="home_id" id="home_id" placeholder="Enter the team name" required style="margin-left: 13px;">
                                         @foreach ($teams as $team)
@@ -43,7 +43,7 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td class=" px-4 py-2"><label for="away_id" style="color: white"><strong>Away Team ID:</strong></label></label></td>
+                                    <td class=" px-4 py-2"><label for="away_id" style="color: white"><strong>Away Team:</strong></label></label></td>
                                     <td><select name="away_id" id="away_id" placeholder="Enter the team name" required style="margin-left: 13px;">
                                         @foreach ($teams as $team)
                                             <option value="{{$team->id}}">{{$team->name}}</option>
@@ -77,18 +77,20 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td class=" px-4 py-2"><label for="referee2" style="color: white"><strong>Referee Name 2:</strong></label></td>
-                                    <td class=" px-4 py-2"><input type="text" id="referee2" name="referee2" placeholder="Enter the referee 2" required><br><br></td>
-                                </tr>
-                                
-                                <tr>
                                     <td class=" px-4 py-2"><label for="status" style="color: white"><strong>Match Status:</strong></label></td>
                                     <td class=" px-4 py-2"><input type="number" id="status" name="status" placeholder="Status 1 or 0" ><br><br></td>
                                 </tr>
                                 
+
                                 <tr>
-                                    <td class=" px-4 py-2"><label for="winner_id" style="color: white"><strong>Winner ID:</strong></label></td>
-                                    <td class=" px-4 py-2"><input type="number" id="winner_id" name="winner_id" placeholder="Enter the winner id" ><br><br></td>
+                                    <td class="px-4 py-2"><label for="home_id" style="color: white" ><strong>Winner Team:</strong></label></td>
+                                    <td style="padding-bottom:10px; padding-top:10px; padding-right:5px">
+                                        <select name="winner_id" id="winner_id" placeholder="Enter the winner name" required style="margin-left: 13px;">
+                                        @foreach ($teams as $team)
+                                            <option value="{{$team->id}}">{{$team->name}}</option>
+                                        @endforeach
+                                        <option value="0">Draw</option>
+                                    </select></td>
                                 </tr>
                                 
                             </tbody>

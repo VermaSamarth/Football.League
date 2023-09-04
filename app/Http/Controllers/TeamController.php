@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Manager;
 use Carbon\Carbon;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ class TeamController extends Controller
 
     public function display_teams(){
         $team=Team::all();
-        return view('teams',['teams'=>$team]);
+        $manager=Manager::all();
+        return view('teams',['teams'=>$team,'managers'=>$manager]);
     }
 }

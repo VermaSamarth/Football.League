@@ -28,7 +28,9 @@
                                 <th class="border border-gray-400 px-4 py-2">Score</th>
                                 <th class="border border-gray-400 px-4 py-2">Referee</th>
                                 <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Winner</th>
-                                <th class="border border-gray-400 px-4 py-2" style="width: 80.6px; align-text-last:center">Update</th>
+                                @if (Auth::user()->is_admin)    
+                                    <th class="border border-gray-400 px-4 py-2" style="width: 80.6px; align-text-last:center">Update</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody style="text-align: center;">
@@ -46,10 +48,12 @@
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{$schedule->home_goals." - ".$schedule->away_goals}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{$schedule->referee1}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{"-"}}</strong></td>
-                                    @if($currentDate >= $schedule->match_date)
-                                        <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(14, 220, 14)"><a href="/admin/schedule/update/{{$schedule->id}}"><strong>{{"+"}}</strong></a></td>
-                                    @else
-                                        <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(241, 103, 103)"><strong>{{"+"}}</strong></td>
+                                    @if (Auth::user()->is_admin)    
+                                        @if($currentDate >= $schedule->match_date)
+                                            <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(14, 220, 14)"><a href="/admin/schedule/update/{{$schedule->id}}"><strong>{{"+"}}</strong></a></td>
+                                        @else
+                                            <td class="border border-gray-400 px-4 py-2" style="background-color: rgb(241, 103, 103)"><strong>{{"+"}}</strong></td>
+                                        @endif
                                     @endif
                                 </tr> 
                                 @endif

@@ -100,7 +100,7 @@ Route::middleware(['auth','verified',EnsureIsAdmin::class])->group(function(){
 
     Route::post('/admin/players/add/new',[PlayerController::class,'add_player'])->name('add_new_player');
 
-    Route::get('admin/player-list', [PlayerController::class, 'plaueList']);
+    // Route::get('admin/player-list', [PlayerController::class, 'playerList']);
 
     // Upload Document Page
     Route::get('/excel/players',function(){
@@ -119,7 +119,7 @@ Route::middleware(['auth','verified',EnsureIsAdmin::class])->group(function(){
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Route::middleware('auth')->group(function () {

@@ -20,7 +20,6 @@ class ScheduleController extends Controller
         $schedule->home_goals=$request->home_goals;
         $schedule->away_goals=$request->away_goals;
         $schedule->referee1=$request->referee1;
-        $schedule->referee2=$request->referee2;
         $schedule->status=$request->status;
         $schedule->winner_id=$request->winner_id;
         $schedule->save();
@@ -44,7 +43,6 @@ class ScheduleController extends Controller
         $schedule->home_goals=$request->home_goals;
         $schedule->away_goals=$request->away_goals;
         $schedule->referee1=$request->referee1;
-        $schedule->referee2=$request->referee2;
         $schedule->status=$request->status;
         $schedule->winner_id=$request->winner_id;
         $schedule->save();

@@ -28,7 +28,7 @@
                             <th class="border border-gray-400 px-4 py-2">Club Badge</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Name</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Location</th>
-                            <th class="border border-gray-400 px-4 py-2">Formation Year</th>
+                            {{-- <th class="border border-gray-400 px-4 py-2">Formation Year</th> --}}
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Stadium Name</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Division</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Manager</th>
@@ -40,14 +40,15 @@
                             @if ($team->division==1)
                             @php $count++; @endphp
                                 <tr>
+                                    {{-- @dd({{$managers->is_manager->fname}}); --}}
                                     <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" ><img src="other_images/{{$team->logo}}" alt=""></td>
+                                    <td class="border border-gray-400 px-4 py-2" align="center"><img src="other_images/{{$team->logo}}" alt="" width="60px" ></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->location}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" ><strong>{{$team->year}}</strong></td>
+                                    {{-- <td class="border border-gray-400 px-4 py-2" ><strong>{{$team->year}}</strong></td> --}}
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->stadium_name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{"Premier League"}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>Pep Guardiola</strong></td>
+                                    <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->manages->fname." ".$team->manages->lname}}</strong></td>
                                 </tr>
                             @endif
                         @endforeach
@@ -68,7 +69,7 @@
                             <th class="border border-gray-400 px-4 py-2">Club Badge</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Name</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Location</th>
-                            <th class="border border-gray-400 px-4 py-2">Formation Year</th>
+                            {{-- <th class="border border-gray-400 px-4 py-2">Formation Year</th> --}}
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Stadium Name</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Division</th>
                             <th class="border border-gray-400 px-4 py-2" style="width: 183.6px;">Manager</th>
@@ -80,14 +81,14 @@
                             @if ($team->division==2)
                             @php $count++; @endphp
                                 <tr>
-                                    <td class="border border-gray-400 px-4 py-2"><strong>{{$count}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" ><img src="other_images/{{$team->logo}}" alt=""></td>
+                                    <td class="border border-gray-400 px-4 py-2" ><strong>{{$count}}</strong></td>
+                                    <td class="border border-gray-400 px-4 py-2" align="center"><img src="other_images/{{$team->logo}}" alt="" width="60px"></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->location}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" ><strong>{{$team->year}}</strong></td>
+                                    {{-- <td class="border border-gray-400 px-4 py-2" ><strong>{{$team->year}}</strong></td> --}}
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->stadium_name}}</strong></td>
                                     <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{"EFL Championship"}}</strong></td>
-                                    <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>Pep Guardiola</strong></td>
+                                    <td class="border border-gray-400 px-4 py-2" style="width: 183.6px;"><strong>{{$team->manages->fname." ".$team->manages->lname}}</strong></td>
                                 </tr>
                             @endif
                         @endforeach

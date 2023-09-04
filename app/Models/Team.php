@@ -11,7 +11,7 @@ class Team extends Model
     use HasFactory;
 
     public function manages(){
-        return $this->hasOne(Manager::class);
+        return $this->belongsTo(Manager::class,'id','team_id');
     }
 
     public function scheduled(){

@@ -21,7 +21,7 @@ class PlayerController extends Controller
         $player->team_id=$request->team_id;
 
         $player->save();
-       return redirect()->to('/admin/player-list');
+       return back();
     } 
 
     public function display_players(){
